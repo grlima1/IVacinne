@@ -84,9 +84,9 @@
     <FlyoutItem Title="Ofertas" Icon="icon_feed.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
-    <!-- <FlyoutItem Title="Vacinas" Icon="list.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
-    </FlyoutItem>-->
+    <FlyoutItem Title="Vacinas" Icon="list.png">
+        <ShellContent Route="ItemsVacinePage" ContentTemplate="{DataTemplate local:ItemsVacinePage}" />
+    </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Sair" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
