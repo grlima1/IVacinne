@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace App1.ViewModels
 {
@@ -18,6 +19,7 @@ namespace App1.ViewModels
         private string text;
         private string description;
         private string explanation;
+        private bool isStartVisible;
         public string Id { get; set; }
 
         public string Text
@@ -36,6 +38,12 @@ namespace App1.ViewModels
         {
             get => explanation;
             set => SetProperty(ref explanation, value);
+        }
+
+        public bool IsStartVisible
+        {
+            get => isStartVisible;
+            set => SetProperty(ref isStartVisible, value);
         }
 
         public string ItemId
@@ -60,11 +68,17 @@ namespace App1.ViewModels
                 Text = item.Text;
                 Description = item.Description;
                 Explanation = item.Explanation;
+                IsStartVisible = false;
             }
             catch (Exception)
             {
                 Debug.WriteLine("Failed to Load Item");
             }
+        }
+
+        public async void OnButtonClicked(object sender, EventArgs args)
+        {
+            IsStartVisible = true;
         }
     }
 }

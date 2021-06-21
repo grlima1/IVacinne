@@ -1,4 +1,5 @@
 ﻿using App1.ViewModels;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
 
@@ -10,6 +11,11 @@ namespace App1.Views
         {
             InitializeComponent();
             BindingContext = new ItemDetailViewModel();
+        }
+
+        void OnButtonClicked(object sender, EventArgs args)
+        {
+            label.IsVisible = true;
         }
     }
 }

@@ -6,18 +6,22 @@
              x:Name="VacinePage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView>
-                <ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}" >
-                        <x:String>AstraZeneca</x:String>
-                        <x:String>Butantan/CoronaVac</x:String>
-                        <x:String>Janssen</x:String>
-                        <x:String>Moderna</x:String>
-                        <x:String>Pfizer–BioNTech</x:String>
-                        <x:String>Sinopharm</x:String>
-                        <x:String>Sinovac</x:String>
-                    </x:Array>
-                </ListView.ItemsSource>
+            <ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Text}" 
+                                LineBreakMode="NoWrap" 
+                                FontAttributes="Bold, Italic"
+                                FontSize="20"  />
+                                <Label Text="{Binding Enterprise}" 
+                                LineBreakMode="NoWrap"
+                                FontSize="13" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>

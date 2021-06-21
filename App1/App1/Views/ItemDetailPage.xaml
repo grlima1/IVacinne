@@ -11,6 +11,19 @@
         <Label Text="{Binding Description}" FontSize="Medium"/>
         <Label Text="Explicação:" FontSize="Large" />
         <Label Text="{Binding Explanation}" FontSize="Medium" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+        <Button Margin="0,10,0,0" Text="Resgate seu cupom da vacina COVID-19!"
+                        Clicked="OnButtonClicked"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+
+        <Label x:Name="label"
+               Text="Cupom: QU4J1K24HJ1"
+               FontSize="Large"
+               TextColor="Green"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+               IsVisible="{Binding IsStartVisible}"/>
     </StackLayout>
     
 </ContentPage>
